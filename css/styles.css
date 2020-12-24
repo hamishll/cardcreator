@@ -11,18 +11,18 @@ body {
 }
 .card {
     width: 90%;
-    max-width: 800px;
+    max-width: 900px;
     border-radius: 3.25em;
     box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.65);
     height: auto;
-    margin: 2em 1em 5em 1em;
+    margin: 3em 1em 5em 1em;
     /* border: 5px solid white; */
 
 }
 .message {
-    width: 85%;
-    max-width: 700px;
-    margin: 1em 1em 3em 1em;
+    width: 90%;
+    max-width: 900px;
+    margin: 1em 1em 2em 1em;
 }
 .indent {
     max-width: 650px;
@@ -36,7 +36,7 @@ img {
 }
 .portrait {
     height: auto;
-    width: 80%;
+    width: 90%;
 }
 
 .landscape {
