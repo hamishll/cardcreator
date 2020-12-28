@@ -20,35 +20,37 @@
         <div class="spacer"> </div>
 
         <div class="card portrait">
-            <img src="img/IMG_7917.jpg">
+            <img id="img1" src="img/IMG_7917.jpg">
+            <label for="input" class="custom-file-upload">&#128247;</label>
+            <input id="input" type="file" accept="image/*" onchange="loadFile(event)" />
         </div>
+        
+
         <div class="spacer"> </div>
         <div class="spacer"><img width="110" src="img/arrow.png" class="center"></div>
         <div class="spacer"> </div>
 
-        <textarea class="message">Hi there,</textarea>
-        <textarea class="message">Make your own card by uploading images, and editing the text here.</textarea>
-        <textarea class="message">When you're done, hit save to get a unique link to your card to share!</textarea>
-        <textarea class="message">Lots of love, Card Creator</textarea> 
-        <div class="message">
-            <img src="img/5.png">
-        </div>
+        <textarea class="message" readonly>Hi there,</textarea>
+        <textarea class="message" readonly>Make your own card by uploading images, and editing the text here.</textarea>
+        <textarea class="message" readonly>When you're done, hit save to get a unique link to your card to share!</textarea>
+        <textarea class="message" readonly>Lots of love, Card Creator</textarea> 
+        <textarea class="message" style="text-align: center">&#10084;</textarea> 
 
         <div class="card">
-            <img src="img/IMG_7894.jpg">
+            <img id="img2" src="img/IMG_7894.jpg">
+            <label for="input" class="custom-file-upload">&#128247;</label>
+            <input id="input2" type="file" accept="image/*" onchange="loadFile2(event)" />
         </div>
+        
+        <button id="editprompt" onclick="startEdit()">Create your own card!</button>
+        <div id="savebar"><button>Save as new card!</button></div>
 
     </div>
 
 
-
-
-
-
-    <script>
-        ScrollReveal().reveal('.card', { duration: 5000, delay: 000 });
-        ScrollReveal().reveal('.message', { duration: 5000, delay: 000 });
-	</script>
+    <script src="js/card.js"></script>
 
 </body>
 </html>
+
+  

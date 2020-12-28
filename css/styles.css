@@ -14,7 +14,6 @@ body {
     max-width: 900px;
     border-radius: 3.25em;
     box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.65);
-    min-height: 1150px;
     margin: 3em 1em 5em 1em;
     /* border: 5px solid white; */
 
@@ -39,6 +38,9 @@ body {
     font-size: 3em;
     border: 0px;
 }
+.message:focus {
+    outline: none;
+}
 .indent {
     max-width: 650px;
     width: 80%;
@@ -46,6 +48,9 @@ body {
 img {
     max-width: 100%;
     max-height: 100%;
+    height: 100%; 
+    width: 100%;
+    object-fit: contain;
     border-radius: 3.0em;
     display: block;
 }
@@ -54,7 +59,7 @@ img {
     width: 90%;
 }
 
-.landscape {
+/* .landscape {
     height: 30vw;
     width: auto;
 }
@@ -62,4 +67,49 @@ img {
 .square {
     height: 80vw;
     width: 80vw;
+} */
+#savebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 0.5em;
+    display: none;
+}
+
+.savebar#button {
+    border-radius: 5px;
+    background: white;
+    border: 1px solid white;
+    color: green;
+    font-size: 1.25em; 
+}
+#editprompt {
+    border-radius: 7px;
+    background: white;
+    border: 2px solid rgb(71, 132, 231);
+    color: rgb(45, 94, 173);
+    font-size: 1em; 
+    padding: 0.5em;
+    margin-bottom: 4em;
+}
+
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.5);
+    position: relative;
+    top: -80px;
+    left: 30px;
+    display: none;
+}
+input[type="file"] {
+    display: none;
 }
