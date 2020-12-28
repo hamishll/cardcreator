@@ -16,6 +16,7 @@ body {
     box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.65);
     margin: 3em 1em 5em 1em;
     /* border: 5px solid white; */
+    overflow: hidden;
 
 }
 .spacer {
@@ -106,9 +107,10 @@ img {
     cursor: pointer;
     background-color: rgba(255,255,255,0.5);
     position: relative;
-    top: -80px;
-    left: 30px;
+    bottom: 8em;
+    left: 0px;
     display: none;
+    font-size: 1.5em;
 }
 input[type="file"] {
     display: none;
