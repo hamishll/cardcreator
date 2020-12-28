@@ -33,8 +33,11 @@ body {
 .message {
     width: 90%;
     max-width: 900px;
-    margin: 1em 1em 2em 1em;
+    margin: 1em 1em 1em 1em;
     min-height: 100px;
+    font-family: 'Caveat', cursive;
+    font-size: 3em;
+    border: 0px;
 }
 .indent {
     max-width: 650px;
