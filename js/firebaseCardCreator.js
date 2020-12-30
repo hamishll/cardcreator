@@ -3,10 +3,12 @@ let queryString = window.location.search;
 let urlParams = new URLSearchParams(queryString);
 cardKey = urlParams.get('c');
 // console.log(queryString);
-console.log(cardKey);
 if (cardKey === null) {
     cardKey = "ztkbnfospga";
-    console.log(cardKey);
+    console.log("Card loaded is " + cardKey);
+}
+else {
+    console.log("Card loaded is " + cardKey);
 };
 
 /* READ CARD */

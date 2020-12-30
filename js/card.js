@@ -38,7 +38,7 @@ function startEdit() {
         });
         item.addEventListener("focusout", function () {
             this.style.backgroundColor = "rgb(255,255,255)";  
-            console.log("focusout");
+            // console.log("focusout");
         });
     });
     
