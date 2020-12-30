@@ -41,5 +41,4 @@ function startEdit() {
             // console.log("focusout");
         });
     });
-    window.history.pushState("object or string", "A card for you!", "?c=");
 }
