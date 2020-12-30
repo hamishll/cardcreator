@@ -42,6 +42,9 @@ body {
 .message:focus {
     outline: none;
 }
+#message {
+    height: 600px;
+}
 .indent {
     max-width: 650px;
     width: 80%;
