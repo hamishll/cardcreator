@@ -58,6 +58,17 @@ function ID() {
     return '' + Math.random().toString(36).substr(2, 22);
 };
 
+/* Copy to clipboard */
+async function copyPageUrl() {
+    try {
+      await navigator.clipboard.writeText(location.href);
+      console.log('Page URL copied to clipboard');
+      window.alert('Shareable link copied to clipboard!');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+
 /* ASYNC UPLOAD FUNCTION */
 async function uploadImage(img,newID) {
     var imageToUpload = document.getElementById('img'+img).src;
@@ -128,13 +139,15 @@ async function saveCard() {
     .then(async function() {
         console.log("Document successfully written!");
         document.getElementById('savebar').style.background = "seagreen";
-        document.getElementById('savebar').innerHTML = "Card successfully saved! Forwarding you to the new card.";
+        document.getElementById('savebar').innerHTML = "Card successfully saved! &nbsp;&nbsp; <button onclick='copyPageUrl()'>Copy to clipboard!</button>";
         //document.getElementById('savebar').innerHTML = "Card successfully saved! <a href='"+window.location.href.split('?')[0]+"?c="+newID+"'>Here's your shareable link!</a>";
-        console.log('timer started');
-        setTimeout(() => {
-            console.log('timer ended');
-            window.location.href = window.location.href.split('?')[0]+"?c="+newID;
-        },1500);
+        //console.log('timer started');
+        window.history.pushState("object or string", "A card for you!", "?c="+newID);
+        
+        // setTimeout(() => {
+        //     console.log('timer ended');
+        //     window.location.href = window.location.href.split('?')[0]+"?c="+newID;
+        // },1500);
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
