@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .flex {
@@ -20,7 +20,7 @@ body {
 
 }
 .spacer {
-    height: 110px;
+    height: 90px;
     width: 90%;
     text-align: center;
 }
@@ -91,7 +91,7 @@ img {
 }
 
 #savebar button {
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px solid white;
     background: transparent;
     color: white;
@@ -101,6 +101,7 @@ img {
 }
 button {
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
 }
 #editprompt {
     border-radius: 7px;
@@ -110,6 +111,10 @@ button {
     font-size: 1em; 
     padding: 0.5em;
     margin-bottom: 4em;
+}
+#editprompt:hover {
+    background:rgba(71, 132, 231, 0.1);
+    transition: 0.1s;
 }
 
 
@@ -121,10 +126,11 @@ button {
     cursor: pointer;
     background-color: rgba(255,255,255,0.5);
     position: relative;
-    bottom: 8em;
+    bottom: 200px;
     left: 0px;
     display: none;
-    font-size: 1.5em;
+    font-size: 2em;
+    color: #333;
 }
 input[type="file"] {
     display: none;
