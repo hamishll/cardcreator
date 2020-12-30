@@ -27,7 +27,7 @@ var loadFile2 = function(event) {
 
 function startEdit() {
     document.getElementById('editprompt').setAttribute('style','display: none');
-    document.getElementById('savebar').setAttribute('style', 'display: block;');
+    document.getElementById('savebar').setAttribute('style', 'display: flex;');
     document.querySelectorAll('.custom-file-upload').forEach(item => {
         item.setAttribute('style', 'display: inline-block;');
     });

@@ -112,7 +112,7 @@ async function saveCard() {
 
     // Set savebar to "Saving..."
     document.getElementById('savebar').innerHTML = "Saving...";
-    document.getElementById('savebar').style.background = "orange";
+    document.getElementById('savebar').style.background = "mediumseagreen";
 
     // Upload images
     await uploadImage(1,newID);
@@ -127,7 +127,7 @@ async function saveCard() {
     })
     .then(async function() {
         console.log("Document successfully written!");
-        document.getElementById('savebar').style.background = "green";
+        document.getElementById('savebar').style.background = "seagreen";
         document.getElementById('savebar').innerHTML = "Card successfully saved! Forwarding you to the new card.";
         //document.getElementById('savebar').innerHTML = "Card successfully saved! <a href='"+window.location.href.split('?')[0]+"?c="+newID+"'>Here's your shareable link!</a>";
         console.log('timer started');
