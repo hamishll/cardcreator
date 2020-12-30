@@ -3,7 +3,7 @@
 A web-app for creating simple ecards with photos and text, built on vanilla Javascript and Google Firebase for hosting.
 
 ## Motivation
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+Existing "ecard" offerings typically look pretty rubbish, and often cost to send. This aims to democratise that and make cards easily edited to be then sent on to others with no hassle. We could do with a bit more gratitude from each other.
  
 ## Screenshots
 ![Screenshot of Card Creator](/img/screenshot.png)
