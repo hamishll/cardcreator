@@ -41,5 +41,4 @@ function startEdit() {
             // console.log("focusout");
         });
     });
-    
 }

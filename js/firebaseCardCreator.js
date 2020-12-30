@@ -49,9 +49,6 @@ docRef.get().then(function(doc) {
 });
 
 
-
-
-
 /* Unique ID generation function */
 
 function ID() {
@@ -61,15 +58,12 @@ function ID() {
     return '' + Math.random().toString(36).substr(2, 22);
 };
 
-
-
-
 /* ASYNC UPLOAD FUNCTION */
 async function uploadImage(img,newID) {
     var imageToUpload = document.getElementById('img'+img).src;
     let blob = await fetch(imageToUpload).then(r => r.blob());
-    // console.log(imageToUpload);
-    // console.log(blob);
+    console.log(imageToUpload);
+    console.log(blob);
     return new Promise((resolve, reject) => {
         
         var uploadTask = storageRef.child('images/' + newID + '/' + img + '.jpg').put(blob);
@@ -128,23 +122,21 @@ async function saveCard() {
     db.collection("cards").doc(newID).set({
         message: message,
         img1: "1.jpg",
-        img2: "2.jpg"
+        img2: "2.jpg",
+        timstamp: Date.now()
     })
-    .then(function() {
+    .then(async function() {
         console.log("Document successfully written!");
         document.getElementById('savebar').style.background = "green";
-        document.getElementById('savebar').innerHTML = "Card successfully saved! <a href='"+window.location.href.split('?')[0]+"?c="+newID+"'>Here's your shareable link!</a>";
-        // window.location.href = window.location.href + "?" + newID;
+        document.getElementById('savebar').innerHTML = "Card successfully saved! Forwarding you to the new card.";
+        //document.getElementById('savebar').innerHTML = "Card successfully saved! <a href='"+window.location.href.split('?')[0]+"?c="+newID+"'>Here's your shareable link!</a>";
+        console.log('timer started');
+        setTimeout(() => {
+            console.log('timer ended');
+            window.location.href = window.location.href.split('?')[0]+"?c="+newID;
+        },1500);
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
     });
-    
 }
-
-
-
-
-//window.location.href = window.location.href + "?YO";
-
-
