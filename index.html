@@ -20,7 +20,7 @@
         <div class="spacer"> </div>
 
         <div class="card portrait">
-            <img id="img1" src="img/IMG_7917.jpg">
+            <img id="img1" src="img/img1.jpg">
         </div>
         <label for="input" class="custom-file-upload">&#128247;</label>
         <input id="input" type="file" accept="image/*" onchange="loadFile(event)" />
@@ -29,26 +29,48 @@
         <div class="spacer"><img width="40" src="img/arrow.png" class="center"></div>
         <div class="spacer"> </div>
 
-        <textarea class="message" readonly>Hi there,</textarea>
-        <textarea class="message" readonly>Make your own card by uploading images, and editing the text here.</textarea>
-        <textarea class="message" readonly>When you're done, hit save to get a unique link to your card to share!</textarea>
-        <textarea class="message" readonly>Lots of love, Card Creator</textarea> 
-        <textarea class="message" style="text-align: center">&#10084;</textarea> 
+        <textarea id="message" class="message" readonly>Error loading card message</textarea>
+        <!-- <textarea class="message" style="text-align: center">&#10084;</textarea>  -->
 
         <div class="card">
-        <img id="img2" src="img/IMG_7894.jpg">
+        <img id="img2" src="img/img2.jpg">
         </div>
         <label for="input2" class="custom-file-upload">&#128247;</label>
         <input id="input2" type="file" accept="image/*" onchange="loadFile2(event)" />
         
         
         <button id="editprompt" onclick="startEdit()">Create your own card!</button>
-        <div id="savebar"><button>Save as new card!</button></div>
+        <div id="savebar"><button onclick="saveCard()">Unsaved changes - Press here to save card</button></div>
 
     </div>
 
 
     <script src="js/card.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAwEPeUBj_ku4yAvLboNBHzisMzw0I3f0I",
+        authDomain: "cardcreator-2479c.firebaseapp.com",
+        projectId: "cardcreator-2479c",
+        storageBucket: "cardcreator-2479c.appspot.com",
+        messagingSenderId: "350503282590",
+        appId: "1:350503282590:web:8a07cdd5a9a025e41a188f"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    var storage = firebase.storage();
+    </script>
+    <script src="js/firebaseCardCreator.js"></script>
 
 </body>
 </html>
