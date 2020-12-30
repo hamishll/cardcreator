@@ -133,7 +133,7 @@ async function saveCard() {
     .then(function() {
         console.log("Document successfully written!");
         document.getElementById('savebar').style.background = "green";
-        document.getElementById('savebar').innerHTML = "Card successfully saved! <a href='?c="+newID+"'>Here's your shareable link!</a>";
+        document.getElementById('savebar').innerHTML = "Card successfully saved! <a href='"+window.location.href.split('?')[0]+"?c="+newID+"'>Here's your shareable link!</a>";
         // window.location.href = window.location.href + "?" + newID;
     })
     .catch(function(error) {
