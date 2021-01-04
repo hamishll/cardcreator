@@ -152,4 +152,5 @@ async function saveCard() {
     .catch(function(error) {
         console.error("Error writing document: ", error);
     });
+    endEdit();
 }

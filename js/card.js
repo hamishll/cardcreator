@@ -3,6 +3,8 @@
 ScrollReveal().reveal('.card', { duration: 5000, delay: 000 });
 ScrollReveal().reveal('.message', { duration: 5000, delay: 000 });
 
+let previousTime = Date.now();
+
 /* Detect changes */
 
 // document.querySelectorAll('.message').forEach(item => {
@@ -42,6 +44,23 @@ function startEdit() {
         });
     });
 }
+function endEdit() {
+    document.getElementById('editprompt').setAttribute('style','display: inline block');
+    document.getElementById('savebar').setAttribute('style', 'display: flex;');
+    document.querySelectorAll('.custom-file-upload').forEach(item => {
+        item.setAttribute('style', 'display: none;');
+    });
+    document.querySelectorAll('.message').forEach(item => {
+        item.readOnly = true;
+        item.removeEventListener("focus", function () {
+            this.style.backgroundColor = "rgb(245,245,245)";  
+        });
+        item.removeEventListener("focusout", function () {
+            this.style.backgroundColor = "rgb(255,255,255)";  
+            // console.log("focusout");
+        });
+    });
+}
 
 // Flip card
 
@@ -63,18 +82,23 @@ document.querySelectorAll('.paper').forEach(item => {
 
         el = this;
         //console.log(el);
+        timeDelta = Date.now() - previousTime;
 
-        if (newIndex <= index) {
+        if (newIndex <= index && timeDelta > 300) {
             this.classList.toggle('is-flipped');
             setTimeout(function(){ el.style.zIndex = newIndex; }, 750);
             console.log("page forward");
+            previousTime = Date.now();
         }
-        else {
+        else if (timeDelta > 300) {
             el.style.zIndex = newIndex;
             setTimeout(function(){ el.classList.toggle('is-flipped')}, 750);
             console.log("page back");
+            previousTime = Date.now();
         }
-
+        else {
+            console.log("you clicked too fast");
+        };
         
         }
     })
