@@ -13,38 +13,49 @@
 </head>
 
 <body>
-
     <div class="flex">
+        <div class="container"> 
 
-        <div class="spacer"> </div>
-        <div class="spacer"> </div>
-        <div class="spacer"> </div>
+            <div class="paper" style="z-index: 4"> <!--Front page-->
 
-        <div class="card portrait">
-            <img id="img1" src="img/img1.jpg">
+
+                <!-- <div class="card portrait"> -->
+                    <img id="img1" src="img/img1.jpg">
+                <!-- </div> -->
+                <label for="input" class="custom-file-upload">&#128247; Change image</label>
+                <input id="input" type="file" accept="image/*" onchange="loadFile(event)" />
+
+
+            </div>
+
+            <div class="paper" style="z-index: 3"> <!--Inside right page-->
+
+                <textarea id="message" class="message" readonly>Error loading card message</textarea>
+                <!-- <textarea class="message" style="text-align: center">&#10084;</textarea>  -->
+
+            </div>
+
+            <div class="paper" style="z-index: 2"> <!--Back page-->
+
+                <div class="card">
+                <img id="img2" src="img/img2.jpg">
+                </div>
+                <label for="input2" class="custom-file-upload">&#128247; Change image</label>
+                <input id="input2" type="file" accept="image/*" onchange="loadFile2(event)" />
+            
+            </div>
+            <div class="paperEnd" style="z-index: 0"> <!--Back page-->
+                <button id="editprompt" onclick="startEdit()">Create your own card!</button>
+            </div>   
+            
+            <div class="fogOfWar">
+
+            </div>
+            
+            <div id="savebar"><button onclick="saveCard()">Unsaved changes - Press here to save card</button></div>
+
         </div>
-        <label for="input" class="custom-file-upload">&#128247; Change image</label>
-        <input id="input" type="file" accept="image/*" onchange="loadFile(event)" />
-
-        <div class="spacer"> </div>
-        <div class="spacer"><img width="40" src="img/arrow.png" class="center"></div>
-        <div class="spacer"> </div>
-
-        <textarea id="message" class="message" readonly>Error loading card message</textarea>
-        <!-- <textarea class="message" style="text-align: center">&#10084;</textarea>  -->
-
-        <div class="card">
-        <img id="img2" src="img/img2.jpg">
-        </div>
-        <label for="input2" class="custom-file-upload">&#128247; Change image</label>
-        <input id="input2" type="file" accept="image/*" onchange="loadFile2(event)" />
-        
-        
-        <button id="editprompt" onclick="startEdit()">Create your own card!</button>
-        <div id="savebar"><button onclick="saveCard()">Unsaved changes - Press here to save card</button></div>
-
     </div>
-
 
     <script src="js/card.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
