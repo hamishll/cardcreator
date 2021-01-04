@@ -66,14 +66,12 @@ document.querySelectorAll('.paper').forEach(item => {
 
         if (newIndex <= index) {
             this.classList.toggle('is-flipped');
-            setTimeout(function(){ el.style.zIndex = newIndex; }, 500);
+            setTimeout(function(){ el.style.zIndex = newIndex; }, 750);
             console.log("page forward");
         }
         else {
-            let t0 = Date.now();
             el.style.zIndex = newIndex;
-            console.log(Date.now()-t0);
-            setTimeout(function(){ el.classList.toggle('is-flipped')}, 500);
+            setTimeout(function(){ el.classList.toggle('is-flipped')}, 750);
             console.log("page back");
         }
 
