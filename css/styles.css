@@ -47,6 +47,10 @@ body {
     transform: rotateY(180deg);
     background-color: rgb(240, 240, 240);   
 }
+.paper.is-half-flipped {
+    transform: rotateY(90deg);
+    background-color: rgb(247, 247, 247);   
+}
 .paperEnd {
     position: absolute;
     display: flex;
@@ -73,6 +77,7 @@ body {
     margin: 3em 1em 3em 1em;
     /* border: 5px solid white; */
     overflow: hidden;
+    backface-visibility: hidden;
 }
 img {
     max-width: 100%;

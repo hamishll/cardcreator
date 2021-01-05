@@ -64,43 +64,96 @@ function endEdit() {
 
 // Flip card
 
+// document.querySelectorAll('.paper').forEach(item => {
+
+//     item.addEventListener("click", function(event) {
+//         console.log(event.target);
+//         const msg = document.getElementById('message');
+//         if (msg === event.target && msg.readOnly === false) {
+            
+//         }
+//         else{
+        
+//         //console.log("Flipping page");
+//         index = this.style.zIndex;
+//         //console.log('Original index:'+index);
+//         newIndex = 4-index;
+//         //console.log('New index:'+newIndex);
+
+//         el = this;
+//         //console.log(el);
+//         timeDelta = Date.now() - previousTime;
+
+//         if (newIndex <= index && timeDelta > 300) {
+//             this.classList.toggle('is-flipped');
+//             setTimeout(function(){ el.style.zIndex = newIndex; }, 750);
+//             console.log("page forward");
+//             previousTime = Date.now();
+//         }
+//         else if (timeDelta > 300) {
+//             el.style.zIndex = newIndex;
+//             setTimeout(function(){ el.classList.toggle('is-flipped')}, 750);
+//             console.log("page back");
+//             previousTime = Date.now();
+//         }
+//         else {
+//             console.log("you clicked too fast"); 
+//         };
+        
+//         }
+//     })
+
+// });
+
 document.querySelectorAll('.paper').forEach(item => {
 
     item.addEventListener("click", function(event) {
-        console.log(event.target);
-        const msg = document.getElementById('message');
-        if (msg === event.target && msg.readOnly === false) {
-            
-        }
-        else{
-        
-        //console.log("Flipping page");
-        index = this.style.zIndex;
-        //console.log('Original index:'+index);
-        newIndex = 4-index;
-        //console.log('New index:'+newIndex);
 
-        el = this;
-        //console.log(el);
-        timeDelta = Date.now() - previousTime;
+        const pages = document.querySelectorAll('.paper');
+        const numberOfPages = pages.length;
+        //console.log("There are "+numberOfPages+" pages");
 
-        if (newIndex <= index && timeDelta > 300) {
-            this.classList.toggle('is-flipped');
-            setTimeout(function(){ el.style.zIndex = newIndex; }, 750);
-            console.log("page forward");
-            previousTime = Date.now();
+        //console.log(event.target);
+        for (let i = 0; i <= 10; i++) {
+            if (item === document.querySelectorAll('.paper')[i]) {
+                //console.log('matched element '+i);
+
+                try {
+                    pages[i-1].style.zIndex = numberOfPages - pages[i-1].style.zIndex+1;
+                }
+                catch {
+                }
+
+                pages[i].classList.toggle('is-flipped');
+                //pages[i].style.zIndex = numberOfPages - pages[i].style.zIndex+1;
+                //pages[i].classList.toggle('is-flipped');
+                break;
+            }
+            else{
+
+            }
         }
-        else if (timeDelta > 300) {
-            el.style.zIndex = newIndex;
-            setTimeout(function(){ el.classList.toggle('is-flipped')}, 750);
-            console.log("page back");
-            previousTime = Date.now();
-        }
-        else {
-            console.log("you clicked too fast");
-        };
         
-        }
+        //const msg = document.getElementById('message');
+        // if (msg === event.target && msg.readOnly === false) {
+
+        // }
+        // else {
+        //     index = this.style.zIndex;
+        //     newIndex = 4-index;
+
+        //     el = this;
+
+        //     if (newIndex <= index) {
+        //         this.classList.toggle('is-flipped');
+        //         setTimeout(function(){ el.style.zIndex = newIndex; }, 750);
+        //     }
+        //     else {
+        //         el.style.zIndex = newIndex;
+        //         setTimeout(function(){ el.classList.toggle('is-flipped')}, 750);
+        //     }
+        // }
+
     })
 
 });
