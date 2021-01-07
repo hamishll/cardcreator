@@ -205,10 +205,12 @@ button {
     color: rgb(45, 94, 173);
     font-size: 2em; 
     padding: 0.5em;
+    transition: 0.2s;
 }
 #editprompt:hover {
-    background:rgba(71, 132, 231, 0.1);
-    transition: 0.1s;
+    background:rgba(255,255,255, 0.9);
+    transform: scale(1.03);
+    
 }
 
 
