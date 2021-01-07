@@ -1,7 +1,9 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background:rgb(230, 230, 230);
+    background:rgb(40, 62, 82);
     overflow: hidden;
+    /* background-image: url(../img/retina_wood.png); */
+    background-repeat: repeat;
 }
 
 .flex {
@@ -39,12 +41,25 @@ body {
     transform-origin: 0% 50%;
     transition-timing-function: ease;
     margin: 0em 0em;
-    overflow: hidden;
-    box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.13);
+    box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.17);
     padding: 1.5em;
+    transform: perspective(3000px) rotateY(0deg);
+    transform-style: preserve-3d;
+    
+}
+.paper:hover:not(.is-flipped) {
+    -webkit-transform: perspective(3000) rotateY(-5deg);
+    -moz-transform: perspective(3000) rotateY(-5deg);
+    transform: perspective(3000) rotateY(-5deg);
+}
+.paper > * {
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
 }
 .paper.is-flipped {
-    transform: rotateY(180deg);
+    -webkit-transform: perspective(3000) rotateY(-180deg);
+    -moz-transform: perspective(3000) rotateY(-180deg);
+    transform: perspective(3000) rotateY(-180deg);
     background-color: rgb(240, 240, 240);   
 }
 .paper.is-half-flipped {
@@ -165,7 +180,7 @@ textarea {
     padding: 0.25em;
     display: none;
     font-size: 2em;
-    height: 6em;
+    height: 3.5em;
     z-index: 99;
     box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.65);
 }
