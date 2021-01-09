@@ -47,11 +47,11 @@ body {
     transform-style: preserve-3d;
     
 }
-.paper:hover:not(.is-flipped) {
+/* .paper:hover:not(.is-flipped) {
     -webkit-transform: perspective(3000) rotateY(-5deg);
     -moz-transform: perspective(3000) rotateY(-5deg);
     transform: perspective(3000) rotateY(-5deg);
-}
+} */
 .paper > * {
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
@@ -93,6 +93,7 @@ body {
     /* border: 5px solid white; */
     overflow: hidden;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 img {
     max-width: 100%;
