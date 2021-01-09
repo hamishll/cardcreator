@@ -107,7 +107,12 @@ function endEdit() {
 
 document.querySelectorAll('.paper').forEach(item => {
 
-    item.addEventListener("click", function(event) {
+    item.addEventListener("mousedown", function(event) {
+        const msg = document.getElementById('message');
+        if (msg === event.target && msg.readOnly === false) {}
+        else {
+            console.log(event.target);
+            console.log(msg.readOnly);
 
         const pages = document.querySelectorAll('.paper');
         const numberOfPages = pages.length;
@@ -133,6 +138,8 @@ document.querySelectorAll('.paper').forEach(item => {
 
             }
         }
+    }
+    
         
         //const msg = document.getElementById('message');
         // if (msg === event.target && msg.readOnly === false) {
