@@ -49,11 +49,11 @@ body {
     cursor: pointer;
     
 }
-.paper:not(.is-flipped) {
+/* .paper:not(.is-flipped) {
     -webkit-transform: perspective(3000) rotateY(-00deg);
     -moz-transform: perspective(3000) rotateY(-00deg);
     transform: perspective(3000) rotateY(-00deg);
-} 
+}  */
 .paper > * {
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
