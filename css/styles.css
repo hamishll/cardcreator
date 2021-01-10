@@ -23,6 +23,8 @@ body {
     justify-content: center;
     animation: pushup 2s;
     animation-fill-mode: forwards; 
+    -webkit-transform:translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 /* @keyframes pushup {
     0% {opacity:0;}
