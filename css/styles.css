@@ -107,6 +107,7 @@ img {
     object-fit: contain;
     display: block;
     border-radius: 1vh;
+    transform-style: preserve-3d;
 }
 
 
