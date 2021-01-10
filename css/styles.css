@@ -55,10 +55,11 @@ body {
     margin-top: 2vh;
     box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.17);
     /* padding: 1.5em; */
+    cursor: pointer;
     transform: perspective(3000) rotateY(0deg);
     -webkit-transform: perspective(3000) rotateY(0deg);
-    cursor: pointer;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
 }
 /* .paper:not(.is-flipped) {
     -webkit-transform: perspective(3000) rotateY(-00deg);
@@ -70,6 +71,7 @@ body {
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     /* -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);  */
 }
@@ -110,6 +112,7 @@ body {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
 }
 img {
     max-width: 100%;
@@ -120,6 +123,9 @@ img {
     display: block;
     border-radius: 1vh;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 
@@ -162,14 +168,13 @@ textarea {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transition: 1.5s;
-    /* transform-style: preserve-3d;
-    -webkit-transform:translate3d(0,0,0);
-    transform: translate3d(0,0,0); */
-    
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;  
 }
 
 #message > div {
     margin-bottom: 1em;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -179,6 +184,9 @@ textarea {
     animation-fill-mode: forwards;
     opacity: 0;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 @keyframes reveal {
     0% {opacity:0;}
