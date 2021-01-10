@@ -71,7 +71,7 @@ document.querySelectorAll('.paper').forEach(item => {
         // console.log(msg.contentEditable);
         if ((event.target.classList.contains('reveal') || event.target.classList.contains('custom-file-upload')) && msg.contentEditable === 'true') {}
         else {
-        //msg.classList.add("reveal");
+        // Message reveals
         let messageDelay = -1;
         document.querySelectorAll('.reveal').forEach(item => {
             messageDelay = messageDelay+1.5;
@@ -79,6 +79,9 @@ document.querySelectorAll('.paper').forEach(item => {
             //console.log("animation delay applied "+messageDelay);
             item.style.animationName = "reveal";
         });
+
+        // Changing z-Index and toggling 'is-flipped'
+
         const pages = document.querySelectorAll('.paper');
         const numberOfPages = pages.length;
         //console.log("There are "+numberOfPages+" pages");

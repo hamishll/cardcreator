@@ -55,7 +55,7 @@ body {
     margin-top: 2vh;
     box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.17);
     /* padding: 1.5em; */
-    transform: perspective(3000) rotateY(1deg);
+    transform: perspective(3000) rotateY(0deg);
     cursor: pointer;
     /* transform-style: preserve-3d;
     -webkit-transform:translate3d(0,0,0); */
