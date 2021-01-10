@@ -1,7 +1,7 @@
 /* ScrollReveal */
 
-ScrollReveal().reveal('.card', { duration: 5000, delay: 000 });
-ScrollReveal().reveal('.message', { duration: 5000, delay: 000 });
+// ScrollReveal().reveal('.card', { duration: 5000, delay: 000 });
+// ScrollReveal().reveal('.message', { duration: 5000, delay: 000 });
 
 let previousTime = Date.now();
 
