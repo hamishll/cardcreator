@@ -121,6 +121,7 @@ body {
     -webkit-backface-visibility: hidden;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
+    -webkit-transform:translate3d(0,0,0);
 }
 img {
     max-width: 100%;
@@ -134,6 +135,7 @@ img {
     -webkit-transform-style: preserve-3d;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    -webkit-transform:translate3d(0,0,0);
 }
 
 
