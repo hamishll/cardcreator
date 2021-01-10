@@ -5,15 +5,6 @@ ScrollReveal().reveal('.message', { duration: 5000, delay: 000 });
 
 let previousTime = Date.now();
 
-/* Detect changes */
-
-// document.querySelectorAll('.message').forEach(item => {
-//     item.addEventListener('keydown', event => {
-//         //handle click
-//         document.getElementById('savebar').setAttribute('style', 'display: block;');
-//     })
-// })
-
 /* Handle Image Upload */
 
 const loadFile = function(event) {
@@ -33,16 +24,25 @@ function startEdit() {
     document.querySelectorAll('.custom-file-upload').forEach(item => {
         item.setAttribute('style', 'display: block;');
     });
-    document.querySelectorAll('.message').forEach(item => {
-        item.readOnly = false;
-        item.addEventListener("focus", function () {
-            this.style.backgroundColor = "rgb(245,245,245)";  
-        });
-        item.addEventListener("focusout", function () {
-            this.style.backgroundColor = "rgb(255,255,255)";  
-            // console.log("focusout");
-        });
+    message = document.getElementById('message');
+    message.contentEditable = true;
+    message.addEventListener("focus", function () {
+        this.style.backgroundColor = "rgb(245,245,245)";  
     });
+    message.addEventListener("focusout", function () {
+        this.style.backgroundColor = "rgb(255,255,255)";  
+    });
+    // document.querySelectorAll('.message').forEach(item => {
+    //     item.contentEditable = true;
+    //     console.log("this should be true:"+item.contentEditable);
+    //     item.addEventListener("focus", function () {
+    //         this.style.backgroundColor = "rgb(245,245,245)";  
+    //     });
+    //     item.addEventListener("focusout", function () {
+    //         this.style.backgroundColor = "rgb(255,255,255)";  
+    //         // console.log("focusout");
+    //     });
+    // });
 }
 function endEdit() {
     document.getElementById('editprompt').setAttribute('style','display: inline block');
@@ -51,7 +51,7 @@ function endEdit() {
         item.setAttribute('style', 'display: none;');
     });
     document.querySelectorAll('.message').forEach(item => {
-        item.readOnly = true;
+        item.contentEditable = false;
         item.removeEventListener("focus", function () {
             this.style.backgroundColor = "rgb(245,245,245)";  
         });
@@ -62,58 +62,23 @@ function endEdit() {
     });
 }
 
-// Flip card
-
-// document.querySelectorAll('.paper').forEach(item => {
-
-//     item.addEventListener("click", function(event) {
-//         console.log(event.target);
-//         const msg = document.getElementById('message');
-//         if (msg === event.target && msg.readOnly === false) {
-            
-//         }
-//         else{
-        
-//         //console.log("Flipping page");
-//         index = this.style.zIndex;
-//         //console.log('Original index:'+index);
-//         newIndex = 4-index;
-//         //console.log('New index:'+newIndex);
-
-//         el = this;
-//         //console.log(el);
-//         timeDelta = Date.now() - previousTime;
-
-//         if (newIndex <= index && timeDelta > 300) {
-//             this.classList.toggle('is-flipped');
-//             setTimeout(function(){ el.style.zIndex = newIndex; }, 750);
-//             console.log("page forward");
-//             previousTime = Date.now();
-//         }
-//         else if (timeDelta > 300) {
-//             el.style.zIndex = newIndex;
-//             setTimeout(function(){ el.classList.toggle('is-flipped')}, 750);
-//             console.log("page back");
-//             previousTime = Date.now();
-//         }
-//         else {
-//             console.log("you clicked too fast"); 
-//         };
-        
-//         }
-//     })
-
-// });
-
 document.querySelectorAll('.paper').forEach(item => {
 
     item.addEventListener("mousedown", function(event) {
-        const msg = document.getElementById('message');
-        if (msg === event.target && msg.readOnly === false) {}
+        let msg = document.getElementById('message');
+        // console.log(event.target);
+        // console.log(msg);
+        // console.log(msg.contentEditable);
+        if ((event.target.classList.contains('reveal') || event.target.classList.contains('custom-file-upload')) && msg.contentEditable === 'true') {}
         else {
-            console.log(event.target);
-            console.log(msg.readOnly);
-
+        //msg.classList.add("reveal");
+        let messageDelay = -1;
+        document.querySelectorAll('.reveal').forEach(item => {
+            messageDelay = messageDelay+2;
+            item.style.animationDelay = messageDelay+"s";
+            //console.log("animation delay applied "+messageDelay);
+            item.style.animationName = "reveal";
+        });
         const pages = document.querySelectorAll('.paper');
         const numberOfPages = pages.length;
         //console.log("There are "+numberOfPages+" pages");
@@ -139,27 +104,6 @@ document.querySelectorAll('.paper').forEach(item => {
             }
         }
     }
-    
-        
-        //const msg = document.getElementById('message');
-        // if (msg === event.target && msg.readOnly === false) {
-
-        // }
-        // else {
-        //     index = this.style.zIndex;
-        //     newIndex = 4-index;
-
-        //     el = this;
-
-        //     if (newIndex <= index) {
-        //         this.classList.toggle('is-flipped');
-        //         setTimeout(function(){ el.style.zIndex = newIndex; }, 750);
-        //     }
-        //     else {
-        //         el.style.zIndex = newIndex;
-        //         setTimeout(function(){ el.classList.toggle('is-flipped')}, 750);
-        //     }
-        // }
 
     })
 

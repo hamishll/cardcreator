@@ -25,8 +25,15 @@ docRef.get().then(function(doc) {
         // console.log(doc.data().message);
         var cardDoc = doc.data();
         var message = document.getElementById('message');
-        message.innerHTML = cardDoc.message.replaceAll('{NEWLINE}','\n');
-        
+        //message.innerHTML = "<p>"+cardDoc.message.replaceAll('{NEWLINE}','<br />')+"</p>";
+        strings = cardDoc.message.replaceAll('{NEWLINE}','<br />').split('<br />');
+        let fullMessage = "";
+        for (let j = 0; j < strings.length; j++) {
+            fullMessage = fullMessage + "<div class='reveal'>"+strings[j]+"</div>";
+            //console.log(fullMessage);
+        }
+        message.innerHTML = fullMessage;
+
         storageRef.child('images/' + cardKey + '/' + cardDoc.img1).getDownloadURL().then(function(url) {
             var image1 = document.getElementById('img1');
             image1.src = url;
@@ -115,7 +122,10 @@ async function uploadImage(img,newID) {
 async function saveCard() {
 
     // Get message value
-    var message = document.getElementById('message').value.replaceAll("\n", "{NEWLINE}");
+    let message = "";
+    document.querySelectorAll('.reveal').forEach(items => {
+        message = message + items.textContent + "{NEWLINE}";
+    })
     
     // Set a unique ID for the element
     var newID = ID();

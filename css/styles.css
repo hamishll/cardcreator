@@ -56,6 +56,7 @@ body {
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
+
 .paper.is-flipped {
     -webkit-transform: perspective(3000) rotateY(-180deg);
     -moz-transform: perspective(3000) rotateY(-180deg);
@@ -94,6 +95,7 @@ body {
     overflow: hidden;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 img {
     max-width: 100%;
@@ -137,7 +139,7 @@ textarea {
     margin-right: auto;
 
   }
-.message {
+#message {
     width: 80%;
     max-width: 900px;
     margin: 1em 1em 1em 1em;
@@ -145,12 +147,28 @@ textarea {
     font-family: 'Caveat', cursive;
     font-size: 2.8em;
     border: 0px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+#message > div {
+    margin-bottom: 1em;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.reveal {
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes reveal {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
 .message:focus {
     outline: none;
-}
-#message {
-    height: 600px;
 }
 .indent {
     max-width: 650px;
