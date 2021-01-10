@@ -55,7 +55,7 @@ body {
     margin-top: 2vh;
     box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.17);
     /* padding: 1.5em; */
-    transform: perspective(3000px) rotateY(0deg);
+    transform: perspective(3000) rotateY(1deg);
     cursor: pointer;
     /* transform-style: preserve-3d;
     -webkit-transform:translate3d(0,0,0); */
@@ -68,6 +68,9 @@ body {
 .paper > * {
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
+    /* transform-style: preserve-3d;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0); */
 }
 
 .paper.is-flipped {
