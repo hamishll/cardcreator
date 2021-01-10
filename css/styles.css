@@ -29,39 +29,40 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid rgb(205, 205, 205);
-    border-radius: 0px 1.25em 1.25em  0px;
+    border-radius: 0px 1vh 1vh  0px;
     /* border: 1px solid red; */
     background: white;
-    width: 85%;
-    height: 85vh;
-    max-height: 1500px;
-    max-width: 800px;
+    width: 70vh;
+    height: 90vh;
+    /* max-height: 1500px;
+    max-width: 800px; */
     top: 4%;
     transition: 1.5s;
     transform-origin: 0% 50%;
     transition-timing-function: ease;
-    margin: 0em 0em;
+    margin-top: 2vh;
     box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.17);
-    padding: 1.5em;
+    /* padding: 1.5em; */
     transform: perspective(3000px) rotateY(0deg);
     transform-style: preserve-3d;
+    cursor: pointer;
     
 }
-/* .paper:hover:not(.is-flipped) {
-    -webkit-transform: perspective(3000) rotateY(-5deg);
-    -moz-transform: perspective(3000) rotateY(-5deg);
-    transform: perspective(3000) rotateY(-5deg);
-} */
+.paper:not(.is-flipped) {
+    -webkit-transform: perspective(3000) rotateY(-10deg);
+    -moz-transform: perspective(3000) rotateY(-10deg);
+    transform: perspective(3000) rotateY(-10deg);
+} 
 .paper > * {
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
 
 .paper.is-flipped {
-    -webkit-transform: perspective(3000) rotateY(-180deg);
-    -moz-transform: perspective(3000) rotateY(-180deg);
-    transform: perspective(3000) rotateY(-180deg);
-    background-color: rgb(240, 240, 240);   
+    -webkit-transform: perspective(3000) rotateY(-170deg);
+    -moz-transform: perspective(3000) rotateY(-170deg);
+    transform: perspective(3000) rotateY(-170deg);
+    background-color: rgb(235, 235, 235);   
 }
 .paper.is-half-flipped {
     transform: rotateY(90deg);
@@ -84,11 +85,11 @@ body {
     
 }
 .card {
-    width: 95%;
-    height: 95%;
+    width: 85%;
+    height: 90%;
     max-width: 900px;   
     max-height: 80vh;
-    border-radius: 0.5em;
+    border-radius: 4vh;
     /* box-shadow: 0px 0px 20px -3px rgba(0,0,0,0.65); */
     margin: 3em 1em 3em 1em;
     /* border: 5px solid white; */
@@ -101,15 +102,12 @@ img {
     max-width: 100%;
     max-height: 100%;
     height: 100%; 
-    width: 100%;
+    /* width: 100%; */
     object-fit: contain;
     display: block;
     border-radius: 8px;
 }
-.portrait {
-    /* height: auto;
-    width: auto; */
-}
+
 
 
 textarea {
@@ -145,11 +143,13 @@ textarea {
     margin: 1em 1em 1em 1em;
     min-height: 100px;
     font-family: 'Caveat', cursive;
-    font-size: 2.8em;
+    font-size: 4vh;
     border: 0px;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    transition: 1.5s;
+    
 }
 
 #message > div {
@@ -222,7 +222,7 @@ button {
     background: white;
     border: 2px solid rgb(71, 132, 231);
     color: rgb(45, 94, 173);
-    font-size: 2em; 
+    font-size: 2vh; 
     padding: 0.5em;
     transition: 0.2s;
 }
