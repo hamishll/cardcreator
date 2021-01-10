@@ -21,7 +21,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    animation: pushup 2s;
+    animation-fill-mode: forwards; 
+}
+/* @keyframes pushup {
+    0% {opacity:0;}
+    100% {opacity:1;}
+} */
+@keyframes pushup {
+    0% {position:absolute; bottom: -100vh;}
+    100% {position:fixed; bottom: 2vh;}
 }
 .paper {
     position: absolute;
