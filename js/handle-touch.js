@@ -15,14 +15,14 @@ document.querySelectorAll('.paper').forEach(item => {
 		swipeDirection = xEnd - xStart;
 		//console.log(xEnd - xStart);
 	}, true);
-	
+
 	item.addEventListener("touchend", function(e3) {
-		if (swipeDirection > 20) {
+		if (swipeDirection > 20 && item.classList.contains('is-flipped')) {
 			console.log("Swiped " + swipeDirection);
 			var mouseEvent = new MouseEvent("mousedown", {});
 			item.dispatchEvent(mouseEvent);
 		}
-		else if (swipeDirection < -20) {
+		else if (swipeDirection < -20 && !(item.classList.contains('is-flipped'))) {
 			console.log("Swiped " + swipeDirection);
 			var mouseEvent = new MouseEvent("mousedown", {});
 			item.dispatchEvent(mouseEvent);

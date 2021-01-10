@@ -46,7 +46,7 @@ body {
     width: 70vh;
     height: 90vh;
     /* max-height: 1500px; */
-    max-width: 90vw;
+    max-width: 85vw;
     max-height: 130vw; 
     top: 4%;
     transition: 1.5s;
@@ -56,21 +56,22 @@ body {
     box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.17);
     /* padding: 1.5em; */
     transform: perspective(3000) rotateY(0deg);
+    -webkit-transform: perspective(3000) rotateY(0deg);
     cursor: pointer;
-    /* transform-style: preserve-3d;
-    -webkit-transform:translate3d(0,0,0); */
+    transform-style: preserve-3d;
 }
 /* .paper:not(.is-flipped) {
     -webkit-transform: perspective(3000) rotateY(-00deg);
     -moz-transform: perspective(3000) rotateY(-00deg);
     transform: perspective(3000) rotateY(-00deg);
 }  */
+
 .paper > * {
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-    /* transform-style: preserve-3d;
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0); */
+    transform-style: preserve-3d;
+    /* -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);  */
 }
 
 .paper.is-flipped {
@@ -79,10 +80,7 @@ body {
     transform: perspective(3000) rotateY(-170deg);
     background-color: rgb(235, 235, 235);   
 }
-/* .paper.is-half-flipped {
-    transform: rotateY(90deg);
-    background-color: rgb(247, 247, 247);   
-} */
+
 .paperEnd {
     position: absolute;
     display: flex;
