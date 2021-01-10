@@ -74,7 +74,7 @@ document.querySelectorAll('.paper').forEach(item => {
         //msg.classList.add("reveal");
         let messageDelay = -1;
         document.querySelectorAll('.reveal').forEach(item => {
-            messageDelay = messageDelay+2;
+            messageDelay = messageDelay+1.5;
             item.style.animationDelay = messageDelay+"s";
             //console.log("animation delay applied "+messageDelay);
             item.style.animationName = "reveal";

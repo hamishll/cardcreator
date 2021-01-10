@@ -34,8 +34,9 @@ body {
     background: white;
     width: 70vh;
     height: 90vh;
-    /* max-height: 1500px;
-    max-width: 800px; */
+    /* max-height: 1500px; */
+    max-width: 90vw;
+    max-height: 130vw; 
     top: 4%;
     transition: 1.5s;
     transform-origin: 0% 50%;
@@ -49,9 +50,9 @@ body {
     
 }
 .paper:not(.is-flipped) {
-    -webkit-transform: perspective(3000) rotateY(-10deg);
-    -moz-transform: perspective(3000) rotateY(-10deg);
-    transform: perspective(3000) rotateY(-10deg);
+    -webkit-transform: perspective(3000) rotateY(-00deg);
+    -moz-transform: perspective(3000) rotateY(-00deg);
+    transform: perspective(3000) rotateY(-00deg);
 } 
 .paper > * {
     -webkit-backface-visibility: hidden; /* Safari */
@@ -162,6 +163,7 @@ textarea {
     animation-duration: 5s;
     animation-fill-mode: forwards;
     opacity: 0;
+    transform-style: preserve-3d;
 }
 @keyframes reveal {
     0% {opacity:0;}
