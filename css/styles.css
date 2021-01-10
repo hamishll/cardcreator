@@ -32,7 +32,7 @@ body {
 } */
 @keyframes pushup {
     0% {position:absolute; bottom: -100vh;}
-    100% {position:fixed; bottom: 2vh;}
+    100% {position:absolute; bottom: 2vh;}
 }
 .paper {
     position: absolute;
@@ -56,9 +56,9 @@ body {
     box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.17);
     /* padding: 1.5em; */
     transform: perspective(3000px) rotateY(0deg);
-    transform-style: preserve-3d;
     cursor: pointer;
-    
+    /* transform-style: preserve-3d;
+    -webkit-transform:translate3d(0,0,0); */
 }
 /* .paper:not(.is-flipped) {
     -webkit-transform: perspective(3000) rotateY(-00deg);
@@ -76,10 +76,10 @@ body {
     transform: perspective(3000) rotateY(-170deg);
     background-color: rgb(235, 235, 235);   
 }
-.paper.is-half-flipped {
+/* .paper.is-half-flipped {
     transform: rotateY(90deg);
     background-color: rgb(247, 247, 247);   
-}
+} */
 .paperEnd {
     position: absolute;
     display: flex;
@@ -158,10 +158,12 @@ textarea {
     font-family: 'Caveat', cursive;
     font-size: calc(1.2rem + 2vh);
     border: 0px;
-    transform-style: preserve-3d;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transition: 1.5s;
+    /* transform-style: preserve-3d;
+    -webkit-transform:translate3d(0,0,0);
+    transform: translate3d(0,0,0); */
     
 }
 
